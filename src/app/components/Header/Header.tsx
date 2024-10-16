@@ -6,10 +6,6 @@ import Image from 'next/image';
 import HamburgerButton from './Hamburger/HamburgerButton';
 import styles from './Header.module.css';
 
-interface HamburgerButtonProps {
-  onToggle: (opened: boolean) => void;
-}
-
 const Header: React.FC = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false); 
