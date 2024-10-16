@@ -1,23 +1,21 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './HamburgerButton.module.css';
 
 interface HamburgerButtonProps {
   onToggle: (opened: boolean) => void;
+  isOpen: boolean;
 }
 
-const HamburgerButton: React.FC<HamburgerButtonProps> = ({ onToggle }) => {
-  const [opened, setOpened] = useState(false);
+const HamburgerButton: React.FC<HamburgerButtonProps> = ({ onToggle, isOpen }) => {
 
   const toggleMenu = () => {
-    const newState = !opened;
-    setOpened(newState);
-    onToggle(newState);
+    onToggle(!isOpen);
   };
 
   return (
-    <div className={`${styles.hamburger} ${opened ? styles.opened : ''}`} onClick={toggleMenu}>
+    <div className={`${styles.hamburger} ${isOpen ? styles.opened : ''}`} onClick={toggleMenu}>
       <svg viewBox="0 0 32 32">
         <path
           className={`${styles.line} ${styles.lineTopBottom}`}

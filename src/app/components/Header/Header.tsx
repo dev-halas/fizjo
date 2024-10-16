@@ -5,16 +5,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 import HamburgerButton from './Hamburger/HamburgerButton';
 import styles from './Header.module.css';
+import { usePathname } from 'next/navigation';
 
 const Header: React.FC = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false); 
+  const pathName = usePathname();
 
   const handleToggleMenu = (opened: boolean): void => {
     setMenuOpened(opened);
   };
 
+  const handleCloseMenu = (): void => {
+    setMenuOpened(false);
+  };
+
   useEffect(() => {
+    console.log(pathName)
     const handleScroll = ():void => {
       if (window.scrollY > 100) {
         setIsScrolled(true);
@@ -29,6 +36,10 @@ const Header: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    handleCloseMenu();
+  }, [pathName])
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
@@ -55,7 +66,7 @@ const Header: React.FC = () => {
         </a>
 
         {/* Hamburger - menu na urządzenia mobilne */}
-        <HamburgerButton onToggle={(opened: boolean) => handleToggleMenu(opened)} />
+        <HamburgerButton onToggle={handleToggleMenu} isOpen={menuOpened} />
       </div>
     </header>
   );
