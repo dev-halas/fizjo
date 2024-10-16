@@ -1,0 +1,106 @@
+.header {
+  position: fixed;
+  background-color: transparent;
+  height: 10%;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.scrolled {
+  background-color: var(--lightest-bg);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  gap: 1em;
+}
+
+.navbar a {
+  font-weight: 500;
+  text-decoration: none;
+  padding: 12px 24px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* Stylizacja dla małych ekranów */
+@media (max-width: 1024px) {
+  .navbar {
+    display: none; /* Ukryj nawigację na urządzeniach mobilnych */
+  }
+
+  .hamburger {
+    display: block; /* Pokaż hamburgera */
+  }
+
+  .navbarOpen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(113.33deg, var(--lightest-bg) 5.76%, var(--light-orange) 86%);
+
+    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(113.33deg, rgba(255, 255, 255, 0.1) 5.76%, rgba(255, 165, 0, 0.2) 86%);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    
+    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.1),
+                      0 4px 10px rgba(0, 0, 0, 0.25);
+    
+    transition: background 0.4s ease, 
+    backdrop-filter 0.4s ease, 
+    box-shadow 0.4s ease;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar a {
+    padding: 6px 0;
+    font-size: 28px;
+    display: block;
+  }
+}
+
+/* CTA */
+.callToAction {
+  font-weight: 500;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,50 @@
+.hero {
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding-top: 10%;
+}
+
+.heroWrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroLeft {
+  grid-column: span 5;
+}
+
+.heroImage {
+  grid-column: span 7;
+  width: 100%;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+.heroButtons {
+  margin-top: 32px;
+  display: flex;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .heroWrapper {
+    grid-template-columns: 1fr;
+    gap: 10%;
+  }
+
+  .heroLeft, .heroImage {
+    grid-column: span 1;
+  }
+
+  .heroImage {
+    max-width: 500px;
+  }
+}

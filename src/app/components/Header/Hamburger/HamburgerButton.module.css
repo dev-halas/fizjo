@@ -1,0 +1,41 @@
+/* HamburgerButton.module.css */
+.hamburger {
+  cursor: pointer;
+  display: none; /* Domyślnie ukryj hamburgera */
+}
+
+.hamburger svg {
+  height: 48px;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: var(--orange);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lineTopBottom {
+  stroke-dasharray: 12 63;
+}
+
+.opened svg {
+  transform: rotate(-45deg);
+}
+
+.opened .lineTopBottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* Wyświetl hamburgera tylko na mniejszych ekranach */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block; /* Pokaż hamburgera na urządzeniach mobilnych */
+  }
+}
+

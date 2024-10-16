@@ -1,16 +1,29 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer"
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const clashDisplay = localFont({
+  src: [
+    {
+      path: './fonts/ClashDisplay-Variable.woff2',
+      weight: '200 700',
+      style: 'normal',
+    },
+    {
+      path: './fonts/ClashDisplay-Variable.woff',
+      weight: '200 700',
+      style: 'normal',
+    },
+    {
+      path: './fonts/ClashDisplay-Variable.ttf',
+      weight: '200 700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-clash-display',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -24,9 +37,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="pl">
+      <body className={clashDisplay.variable}>
+        <Header />
+          {children}
+        <Footer />
+
+        <div className="line line-1"></div>
+        <div className="line line-2"></div>
+        <div className="line line-3"></div>
+        <div className="line line-4"></div>
       </body>
     </html>
   );
