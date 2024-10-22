@@ -1,0 +1,22 @@
+.footerInner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 4vh, 96px);
+  padding: 48px 0;
+}
+
+.footerText {
+  text-align: center;
+}
+
+.footerCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2vh, 64px);;
+}
+
+.contactMap {
+  min-height: 500px;
+}

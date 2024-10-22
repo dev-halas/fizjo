@@ -15,7 +15,7 @@
 
 body {
   font-family: var(--font-clash-display), sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--dark);
   background: linear-gradient(113.33deg, var(--lightest-bg) 5.76%, var(--white) 86%);
 }
@@ -29,14 +29,20 @@ ul {
   padding: 0;
 }
 
+h1, h2, h3, h4 {
+  font-weight: 500;
+}
+
 .container {
   width: min(85%, 1600px);
   margin: auto;
+  position: relative;
 }
 
 .containerBig {
   width: min(94%, 1800px);
   margin: auto;
+  position: relative;
 }
 
 @media (max-width: 1024px) {
@@ -99,4 +105,36 @@ ul {
 
 .bgLightOrange {
   background-color: var(--light-orange);
+}
+
+.callToAction {
+  font-weight: 500;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gm-style-iw-chr {
+  height: 12px;
+}
+
+.textWithIcon {
+  display: flex;
+  padding: 4px 0;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .textWithIcon {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.mb24 {
+  margin-bottom: 24px;
 }

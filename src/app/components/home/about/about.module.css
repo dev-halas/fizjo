@@ -1,0 +1,68 @@
+.aboutWrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 100px 0;
+  gap: 5vw;
+  align-items: center;
+}
+
+.aboutCounters {
+  grid-column: span 2;
+  position: relative;
+}
+
+.aboutPhotos, .aboutText {
+  grid-column: span 5;
+  position: relative;
+}
+
+.aboutText h3 {
+  font-size: clamp(32px, 2.5vw, 64px);
+  line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+  .aboutCounters {
+    grid-column: span 5;
+  }
+
+  .aboutPhotos {
+    grid-column: span 7;
+  }
+
+  .aboutText {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutCounters, .aboutPhotos, .aboutText {
+    grid-column: span 12;
+  }
+}
+
+.maskedImage {
+  max-width: 80%;
+  margin-left: auto;
+}
+
+.aboutSvg {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  z-index: 10;
+}
+
+.aboutCounters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  text-align: center;
+}
+
+.counter span {
+  display: block;
+  font-weight: 500;
+  font-size: clamp(32px, 2.5vw, 64px);
+}

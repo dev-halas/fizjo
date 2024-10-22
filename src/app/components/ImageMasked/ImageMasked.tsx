@@ -7,9 +7,10 @@ import styles from './ImagesMasked.module.css';
 interface ImageMaskedProps {
   svgMask: { src: string };
   imageUrl: string | StaticImageData;
+  aspectRatio: string; 
 }
 
-const ImageMasked: React.FC<ImageMaskedProps> = ({ svgMask, imageUrl }) => {
+const ImageMasked: React.FC<ImageMaskedProps> = ({ svgMask, imageUrl, aspectRatio }) => {
   const [maskSrc] = useState<string | null>(svgMask.src);
   
   return (
@@ -18,6 +19,7 @@ const ImageMasked: React.FC<ImageMaskedProps> = ({ svgMask, imageUrl }) => {
         style={{ 
           maskImage: `url(${maskSrc})`, 
           WebkitMaskImage: `url(${maskSrc})`,
+          aspectRatio,
         }}>
         <Image src={imageUrl} alt="hero" fill/>
       </div>      
