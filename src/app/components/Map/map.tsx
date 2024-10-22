@@ -15,7 +15,7 @@ const Map = () => {
         libraries: ['marker'],
       });
 
-      const googleMaps = await loader.load();
+      await loader.load();
 
       const position = {
         lat: 53.0412019537362,
