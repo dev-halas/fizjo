@@ -21,7 +21,6 @@ const Header: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log(pathName)
     const handleScroll = ():void => {
       if (window.scrollY > 100) {
         setIsScrolled(true);
@@ -60,10 +59,10 @@ const Header: React.FC = () => {
           </ul>
         </nav>
 
-        <a className={styles.callToAction}>
+        <Link href="#" className='callToAction'>
           <Image src='/images/svg/phoneIcon.svg' alt="Phone" width={20} height={20} /> 
           <span>+48 517 706 357</span>
-        </a>
+        </Link>
 
         {/* Hamburger - menu na urządzenia mobilne */}
         <HamburgerButton onToggle={handleToggleMenu} isOpen={menuOpened} />

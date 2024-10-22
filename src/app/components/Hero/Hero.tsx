@@ -33,6 +33,7 @@ const Hero: React.FC = () => {
           <ImageMasked 
             imageUrl={heroImg}
             svgMask={heroMask}
+            aspectRatio={'9 / 8.4'}
           />   
         </div>
 

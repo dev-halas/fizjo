@@ -15,7 +15,7 @@ interface IconSquareProps {
 const defaultConfig = {
   iconSize: '36px',
   squareSize: '80px',
-  borderRadius: '18px',
+  borderRadius: '16px',
   backgroundColor: '--light-orange',
 };
 

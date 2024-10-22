@@ -95,12 +95,3 @@
     display: block;
   }
 }
-
-/* CTA */
-.callToAction {
-  font-weight: 500;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-}

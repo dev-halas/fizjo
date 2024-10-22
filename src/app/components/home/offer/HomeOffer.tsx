@@ -16,8 +16,14 @@ const HomeOffer: React.FC = () => {
           <div className="fontLightOrange">
             Dzięki zaangażowaniu, moi podpieczni
           </div>
-          <div>
-            rozstają się z bólem `icon` na zawsze.
+          <div className='textWithIcon'>
+            <span>rozstają się z bólem</span>
+            <IconSquare src={leafIcon} iconConfig={{ 
+              iconSize: 'max(24px, 2.5vw)',
+              squareSize: 'max(48px, 5vw)',
+              backgroundColor: '--light-orange'
+            }}/>
+            <span>na zawsze.</span>
           </div>
           <div>Zobacz jak mogę Ci pomóc.</div>
         </div>
