@@ -138,3 +138,11 @@ h1, h2, h3, h4 {
 .mb24 {
   margin-bottom: 24px;
 }
+
+.mt24 {
+  margin-top: 24px;
+}
+
+.mtb48 {
+  margin: 48px 0;
+}

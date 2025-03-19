@@ -1,0 +1,31 @@
+.accordionContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.accordionItem {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordionHeader {
+  width: 100%;
+  text-align: left;
+  padding: 24px 48px;
+  font-size: 42px;
+  line-height: 1.2;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordionContent {
+  overflow: hidden;
+}
+
+.accordionText {
+  padding: 0px 48px 36px;
+  color: #444;
+}
