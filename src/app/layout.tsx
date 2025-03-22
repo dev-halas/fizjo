@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LanguageProvider } from "./context/LanguageContext";
 import localFont from "next/font/local";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer"
@@ -39,9 +40,11 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={clashDisplay.variable}>
-        <Header />
-          {children}
-        <Footer />
+        <LanguageProvider>
+          <Header />
+            {children}
+          <Footer />
+        </LanguageProvider>
 
         <div className="line line-1"></div>
         <div className="line line-2"></div>

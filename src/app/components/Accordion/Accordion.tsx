@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import styles from "./Accordion.module.css";
 import sanitizeHtml from "sanitize-html";
 import AccordionArrow from "/public/images/svg/accordion_arrow.svg";
+import { SANITIZE_OPTIONS } from "../../utils/constans";
 
 type AccordionItem = {
   title: string;
@@ -15,14 +16,6 @@ type AccordionProps = {
   items: AccordionItem[];
 };
 
-const allowedTags = ["p", "strong", "a", "ul", "li", "em", "br", "h1", "h2", "h3", "h4", "h5", "h6"]
-
-const sanitizeOptions = {
-  allowedTags,
-  allowedAttributes: {
-    a: ["href", "target", "rel"],
-  },
-};
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -60,7 +53,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
             <div
               className={styles.accordionText}
               dangerouslySetInnerHTML={{
-                __html: sanitizeHtml(item.content, sanitizeOptions),
+                __html: sanitizeHtml(item.content, SANITIZE_OPTIONS),
               }}
             />
           </motion.div>

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import HamburgerButton from './Hamburger/HamburgerButton';
 import styles from './Header.module.css';
 import { usePathname } from 'next/navigation';
+import { translate } from "../../utils/localize";
 
 const Header: React.FC = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
@@ -52,16 +53,16 @@ const Header: React.FC = () => {
         {/* Menu nawigacji */}
         <nav className={`${styles.navbar} ${menuOpened ? styles.navbarOpen : ''}`}>
           <ul>
-            <li><Link href="/">Marek Bober</Link></li>
-            <li><Link href="/offer">Moja oferta</Link></li>
-            <li><Link href="#services">Blog</Link></li>
-            <li><Link href="#contact">Kontakt</Link></li>
+            <li><Link href="/">{translate('navigation.home')}</Link></li>
+            <li><Link href="/offer">{translate('navigation.offer')}</Link></li>
+            <li><Link href="#services">{translate('navigation.blog')}</Link></li>
+            <li><Link href="#contact">{translate('navigation.contact')}</Link></li>
           </ul>
         </nav>
 
         <Link href="#" className='callToAction'>
           <Image src='/images/svg/phoneIcon.svg' alt="Phone" width={20} height={20} /> 
-          <span>+48 517 706 357</span>
+          <span>{translate('global.phoneNumber')}</span>
         </Link>
 
         {/* Hamburger - menu na urządzenia mobilne */}
