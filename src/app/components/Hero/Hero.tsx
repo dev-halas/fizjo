@@ -1,11 +1,12 @@
 "use client";
 
 import styles from './Hero.module.css';
-import LinkButton from '../Button/LinkButton';
-import ImageMasked from '../ImageMasked/ImageMasked';
+import { LinkButton } from '@/app/components';
+import { ImageMasked } from '@/app/components';
 
 import heroImg from '/public/images/hero.jpg';
 import heroMask from '/public/images/svg/masks/hero.svg';
+import { translate } from '@/app/utils/localize';
 
 const Hero: React.FC = () => {
   return (
@@ -14,17 +15,25 @@ const Hero: React.FC = () => {
         
         <div className={styles.heroLeft}>
           <h2 className={`bigText ${styles.heroText}`}>
-            <span className='fontLightOrange'>Jestem Marek</span>
-            <span className='fontLightOrange'>i sprawiam, </span>
-            <span>że uciążliwy</span>
-            <span className='fontOrange'>ból znika.</span>
+            <span className='fontLightOrange'>
+              {translate('home.hero.text_1')}
+            </span>
+            <span className='fontLightOrange'>
+              {translate('home.hero.text_2')}
+            </span>
+            <span>
+              {translate('home.hero.text_3')}
+            </span>
+            <span className='fontOrange'>
+              {translate('home.hero.text_4')}
+            </span>
           </h2>
           <div className={styles.heroButtons}>
             <LinkButton href="#">
-              Poznaj mnie
+              {translate('home.hero.letsKnowMe')}
             </LinkButton>
             <LinkButton href="#" noArrow>
-              Usługi
+              {translate('home.hero.services')}
             </LinkButton>
           </div>
         </div>
